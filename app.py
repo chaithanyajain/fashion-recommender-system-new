@@ -17,7 +17,6 @@ model = tensorflow.keras.Sequential([
 ])
 
 #print(model.summary())
-
 def extract_features(img_path,model):
     img = image.load_img(img_path,target_size=(224,224))
     img_array = image.img_to_array(img)
@@ -40,4 +39,3 @@ for file in tqdm(filenames):
 
 pickle.dump(feature_list,open('embeddings.pkl','wb'))
 pickle.dump(filenames,open('filenames.pkl','wb'))
-
